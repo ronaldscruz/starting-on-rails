@@ -1,6 +1,13 @@
 <h1>Welcome to my blog!</h1>
 
+<%= link_to '📰 Create new article', new_article_path %>
+
+<br><br>
+
+<ul>
 <% @articles.each do |article| %>
+  <li>
+    <%= link_to article.title, article_path(article) %>
+  </li>
   <hr>
-  <%= link_to article.title, article_path(article) %>
 <% end %>
